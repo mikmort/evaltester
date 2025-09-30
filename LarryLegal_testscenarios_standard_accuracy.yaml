@@ -1,0 +1,817 @@
+# Test scenarios for LarryLegal invoice line matching - Standard Accuracy Tests
+# These test cases validate typical law firm purchasing and operating expense classifications
+
+tests:
+  - name: LarryLegal-LineMatching-001
+    description: "Westlaw Precision annual research subscription renewal (100 attorney seats)"
+    # Expected Account: 54000 (Legal Research Subscriptions)
+    # Reasoning: Legal research database subscription used by attorneys falls under research subscriptions
+    # Alternatives Considered: 61100 (Cloud Subscriptions) - rejected; this is legal research, not general SaaS
+    # Business Context: Law firms maintain separate GL for research databases (Westlaw/Lexis)
+    test_setup_files: "LarryLegal_vendors.yaml, LarryLegal_glaccounts.yaml"
+    vendor: "Westlaw (Thomson Reuters)"
+    line_items:
+      - line_id: 10000
+        description: "Annual Westlaw Precision firmwide license (100 seats)"
+        amount: 185000.00
+    expected_data:
+      - line_id: 10000
+        account_id: "54000"
+
+  - name: LarryLegal-LineMatching-002
+    description: "LexisNexis Practical Guidance subscription - 25-seat add-on"
+    # Expected Account: 54000 (Legal Research Subscriptions)
+    # Reasoning: Legal research and practice guidance tool; classified as research subscriptions
+    # Alternatives Considered: 65200 (Dues and Subscriptions) - rejected; this is core legal research, tracked separately
+    # Business Context: Legal research subscriptions tracked distinctly from general dues
+    test_setup_files: "LarryLegal_vendors.yaml, LarryLegal_glaccounts.yaml"
+    vendor: "LexisNexis"
+    line_items:
+      - line_id: 10000
+        description: "Lexis Practical Guidance seats (25 users) - annual term"
+        amount: 42000.00
+    expected_data:
+      - line_id: 10000
+        account_id: "54000"
+
+  - name: LarryLegal-LineMatching-003
+    description: "RelativityOne e-discovery hosting - 2 TB workspace, month of July"
+    # Expected Account: 53000 (e-Discovery and Data Processing)
+    # Reasoning: Hosted e-discovery platform usage and data processing fees belong in e-discovery expense
+    # Alternatives Considered: 61100 (Cloud Subscriptions) - rejected; e-discovery has dedicated GL for matter support costs
+    # Business Context: Law firms separate e-discovery from general IT subscriptions due to case support nature
+    test_setup_files: "LarryLegal_vendors.yaml, LarryLegal_glaccounts.yaml"
+    vendor: "Relativity (e-Discovery)"
+    line_items:
+      - line_id: 10000
+        description: "RelativityOne hosting - 2 TB active case workspace (monthly)"
+        amount: 18500.00
+    expected_data:
+      - line_id: 10000
+        account_id: "53000"
+
+  - name: LarryLegal-LineMatching-004
+    description: "Veritext deposition transcript certified copy - Smith v. Apex"
+    # Expected Account: 52000 (Court Reporting and Transcripts)
+    # Reasoning: Court reporting firm providing deposition transcript; standard transcripts GL
+    # Alternatives Considered: 51000 (Professional Services) - rejected; this is specific to transcripts/reporting
+    # Business Context: Firms track transcripts separately from expert/professional services
+    test_setup_files: "LarryLegal_vendors.yaml, LarryLegal_glaccounts.yaml"
+    vendor: "Veritext Legal Solutions (Court Reporting)"
+    line_items:
+      - line_id: 10000
+        description: "Certified deposition transcript - 275 pages at $4.25/page"
+        amount: 1168.75
+    expected_data:
+      - line_id: 10000
+        account_id: "52000"
+
+  - name: LarryLegal-LineMatching-005
+    description: "Iron Mountain offsite records storage - Chicago vault, July"
+    # Expected Account: 56000 (Office Supplies and Printing)
+    # Reasoning: Offsite records storage is an administrative records management service; in this COA, records operations (storage, retrieval, shredding) are grouped under supplies/printing.
+    # Alternatives Considered: 60200 (Property Management Fees) - rejected; not facilities vendor management. 61100 (Cloud Subscriptions) - rejected; not SaaS.
+    # Business Policy: Admin Policy OPS-REC-01 categorizes physical records services under 56000 for consistent tracking with printing/shredding.
+    test_setup_files: "LarryLegal_vendors.yaml, LarryLegal_glaccounts.yaml"
+    vendor: "Iron Mountain (Records Storage)"
+    line_items:
+      - line_id: 10000
+        description: "Offsite box storage and retrieval services (monthly)"
+        amount: 2450.00
+    expected_data:
+      - line_id: 10000
+        account_id: "56000"
+
+  - name: LarryLegal-LineMatching-006
+    description: "Microsoft 365 E5 cloud licenses - 700 users, monthly"
+    # Expected Account: 61100 (Cloud Subscriptions (SaaS))
+    # Reasoning: SaaS cloud subscription for productivity suite maps to cloud subscriptions
+    # Alternatives Considered: 61200 (IT Equipment) - rejected; this is software service, not hardware
+    # Business Context: Firms separate SaaS OPEX from hardware or capitalized software
+    test_setup_files: "LarryLegal_vendors.yaml, LarryLegal_glaccounts.yaml"
+    vendor: "Microsoft Corporation (Cloud Services)"
+    line_items:
+      - line_id: 10000
+        description: "M365 E5 subscription - 700 seats (monthly)"
+        amount: 119000.00
+    expected_data:
+      - line_id: 10000
+        account_id: "61100"
+
+  - name: LarryLegal-LineMatching-007
+    description: "Zoom Phone Pro seats - 900 licenses, monthly"
+    # Expected Account: 55000 (Telecommunications and Internet)
+    # Reasoning: Telephony service; classified with telecom expenses
+    # Alternatives Considered: 61100 (Cloud Subscriptions) - rejected; firm policy maps telephony to telecom GL
+    # Business Context: Unified communications is tracked under telecom for law firms
+    test_setup_files: "LarryLegal_vendors.yaml, LarryLegal_glaccounts.yaml"
+    vendor: "Zoom Video Communications"
+    line_items:
+      - line_id: 10000
+        description: "Zoom Phone Pro - 900 seats"
+        amount: 13500.00
+    expected_data:
+      - line_id: 10000
+        account_id: "55000"
+
+  - name: LarryLegal-LineMatching-008
+    description: "Staples - office paper, toner cartridges, folders"
+    # Expected Account: 56000 (Office Supplies and Printing)
+    # Reasoning: Consumable office supplies and print materials map to office supplies GL
+    # Alternatives Considered: 65200 (Dues and Subscriptions) - rejected; not applicable
+    # Business Context: Standard supplies purchases
+    test_setup_files: "LarryLegal_vendors.yaml, LarryLegal_glaccounts.yaml"
+    vendor: "Staples Business Advantage"
+    line_items:
+      - line_id: 10000
+        description: "Copy paper (200 reams), HP 414A toner set, file folders"
+        amount: 3280.00
+    expected_data:
+      - line_id: 10000
+        account_id: "56000"
+
+  - name: LarryLegal-LineMatching-009
+    description: "FedEx - overnight court filing delivery (Chicago → DC)"
+    # Expected Account: 57000 (Postage and Courier)
+    # Reasoning: Courier service for filings belongs under postage/courier GL
+    # Alternatives Considered: 58000 (Travel) - rejected; not travel
+    # Business Context: Firms separate postage/courier from travel and other admin expenses
+    test_setup_files: "LarryLegal_vendors.yaml, LarryLegal_glaccounts.yaml"
+    vendor: "FedEx Corporation (Courier)"
+    line_items:
+      - line_id: 10000
+        description: "Overnight envelope - appellate brief filing"
+        amount: 87.50
+    expected_data:
+      - line_id: 10000
+        account_id: "57000"
+
+  - name: LarryLegal-LineMatching-010
+    description: "Amex GBT - partner travel to client arbitration (NYC)"
+    # Expected Account: 58000 (Travel - Airfare, Lodging, Meals)
+    # Reasoning: Corporate travel booking; travel/entertainment GL
+    # Alternatives Considered: 51000 (Professional Services) - rejected; vendor is TMC facilitating travel
+    # Business Context: Travel booked via TMC posts to travel expense GL
+    test_setup_files: "LarryLegal_vendors.yaml, LarryLegal_glaccounts.yaml"
+    vendor: "American Express Global Business Travel"
+    line_items:
+      - line_id: 10000
+        description: "Roundtrip air + hotel - arbitration hearing"
+        amount: 2140.00
+    expected_data:
+      - line_id: 10000
+        account_id: "58000"
+
+  - name: LarryLegal-LineMatching-011
+    description: "AT&T Dedicated Internet - Chicago HQ, 1Gbps"
+    # Expected Account: 55000 (Telecommunications and Internet)
+    # Reasoning: Internet circuit service; telecom GL
+    # Alternatives Considered: 61100 (Cloud Subscriptions) - rejected; not SaaS
+    # Business Context: WAN/ISP services tracked in telecom
+    test_setup_files: "LarryLegal_vendors.yaml, LarryLegal_glaccounts.yaml"
+    vendor: "AT&T (Telecommunications)"
+    line_items:
+      - line_id: 10000
+        description: "Dedicated Internet Access 1Gbps - monthly service"
+        amount: 2850.00
+    expected_data:
+      - line_id: 10000
+        account_id: "55000"
+
+  - name: LarryLegal-LineMatching-012
+    description: "Pitney Bowes postage meter refills and maintenance"
+    # Expected Account: 57000 (Postage and Courier)
+    # Reasoning: Postage refills/maintenance related to mailing operations
+    # Alternatives Considered: 56000 (Office Supplies) - rejected; postage tracked separately
+    # Business Context: Postage-specific accounting bucket used by AP
+    test_setup_files: "LarryLegal_vendors.yaml, LarryLegal_glaccounts.yaml"
+    vendor: "Pitney Bowes (Postage & Mailing)"
+    line_items:
+      - line_id: 10000
+        description: "Meter postage reload + quarterly maintenance"
+        amount: 690.00
+    expected_data:
+      - line_id: 10000
+        account_id: "57000"
+
+  - name: LarryLegal-LineMatching-013
+    description: "Ricoh multi-function device lease - July base charge"
+    # Expected Account: 56000 (Office Supplies and Printing)
+    # Reasoning: Print/Copy equipment operational lease charges mapped to printing/supplies bucket
+    # Alternatives Considered: 60100 (Rent) - rejected; not facility rent, this is print operations cost
+    # Business Context: Firms track MFD lease costs in printing/supplies GL
+    test_setup_files: "LarryLegal_vendors.yaml, LarryLegal_glaccounts.yaml"
+    vendor: "Ricoh USA (Document Solutions)"
+    line_items:
+      - line_id: 10000
+        description: "Base lease charge for 12 MFD units - July"
+        amount: 3120.00
+    expected_data:
+      - line_id: 10000
+        account_id: "56000"
+
+  - name: LarryLegal-LineMatching-014
+    description: "Xerox usage overage - color pages exceeding included volume"
+    # Expected Account: 56000 (Office Supplies and Printing)
+    # Reasoning: Additional click charges for printing
+    # Alternatives Considered: 65200 - rejected; not general dues
+    # Business Context: Printing costs centralized under supplies/printing
+    test_setup_files: "LarryLegal_vendors.yaml, LarryLegal_glaccounts.yaml"
+    vendor: "Xerox Business Solutions"
+    line_items:
+      - line_id: 10000
+        description: "Color overage - 45,000 pages @ $0.035"
+        amount: 1575.00
+    expected_data:
+      - line_id: 10000
+        account_id: "56000"
+
+  - name: LarryLegal-LineMatching-015
+    description: "United Airlines - associate travel to client deposition"
+    # Expected Account: 58000 (Travel - Airfare, Lodging, Meals)
+    # Reasoning: Airline tickets for business travel
+    # Alternatives Considered: 57000 - rejected; not postage/courier
+    # Business Context: Travel costs aggregated under T&E GL
+    test_setup_files: "LarryLegal_vendors.yaml, LarryLegal_glaccounts.yaml"
+    vendor: "United Airlines (Corporate Travel)"
+    line_items:
+      - line_id: 10000
+        description: "ORD→LAX roundtrip - client deposition"
+        amount: 685.40
+    expected_data:
+      - line_id: 10000
+        account_id: "58000"
+
+  - name: LarryLegal-LineMatching-016
+    description: "Hyatt - hotel stay for trial team (3 nights)"
+    # Expected Account: 58000 (Travel - Airfare, Lodging, Meals)
+    # Reasoning: Lodging during business travel
+    # Alternatives Considered: 60100 - rejected; this is not office rent
+    # Business Context: Lodging categorized within T&E
+    test_setup_files: "LarryLegal_vendors.yaml, LarryLegal_glaccounts.yaml"
+    vendor: "Hyatt Hotels Corporation (Corporate Lodging)"
+    line_items:
+      - line_id: 10000
+        description: "Hyatt Regency - 3 nights stay, trial support"
+        amount: 789.00
+    expected_data:
+      - line_id: 10000
+        account_id: "58000"
+
+  - name: LarryLegal-LineMatching-017
+    description: "LanguageLine - Spanish interpretation for witness interview (2 hours)"
+    # Expected Account: 59000 (Translation and Interpretation Services)
+    # Reasoning: Language services map to translation GL
+    # Alternatives Considered: 51000 - rejected; not expert witness or general consulting
+    # Business Context: Interpretation services tracked separately for compliance/budgeting
+    test_setup_files: "LarryLegal_vendors.yaml, LarryLegal_glaccounts.yaml"
+    vendor: "LanguageLine Solutions (Translation)"
+    line_items:
+      - line_id: 10000
+        description: "On-demand Spanish interpreter (2 hours)"
+        amount: 340.00
+    expected_data:
+      - line_id: 10000
+        account_id: "59000"
+
+  - name: LarryLegal-LineMatching-018
+    description: "Expert Institute - expert witness referral fee (IP valuation)"
+    # Expected Account: 51000 (Professional Services - Experts & Consultants)
+    # Reasoning: Expert referral/witness related professional services
+    # Alternatives Considered: 65300 (Recruiting) - rejected; not staff recruiting
+    # Business Context: Experts & consultants tracked in professional services GL
+    test_setup_files: "LarryLegal_vendors.yaml, LarryLegal_glaccounts.yaml"
+    vendor: "Expert Institute (Expert Witness Network)"
+    line_items:
+      - line_id: 10000
+        description: "Referral fee - IP valuation expert selection"
+        amount: 2500.00
+    expected_data:
+      - line_id: 10000
+        account_id: "51000"
+
+  - name: LarryLegal-LineMatching-019
+    description: "Certified court record transcript copy fee - Civil Division (Case 2024-L-12345)"
+    # Expected Account: 52000 (Court Reporting and Transcripts)
+    # Reasoning: Clerk-issued certified transcript copies are treated as transcript costs and tracked with court reporting.
+    # Alternatives Considered: 56000 (Office Supplies) - rejected; not supplies. 51000 (Professional Services) - rejected; not consulting. 65200 (Dues) - rejected; not dues.
+    # Business Context: In absence of a separate 'Court Costs' account, all transcript-related charges (including certified record copies) post to 52000 for matter cost tracking.
+    test_setup_files: "LarryLegal_vendors.yaml, LarryLegal_glaccounts.yaml"
+    vendor: "City of Chicago - Courts & Filing"
+    line_items:
+      - line_id: 10000
+        description: "Civil filing fee - Cook County Circuit Court"
+        amount: 497.00
+    expected_data:
+      - line_id: 10000
+        account_id: "52000"
+
+  - name: LarryLegal-LineMatching-020
+    description: "CDW - Dell latitude docking stations (6 units)"
+    # Expected Account: 61200 (IT Equipment and Peripherals (Expensed))
+    # Reasoning: Small-dollar IT peripherals below capitalization threshold
+    # Alternatives Considered: 12300 (Computer and IT Equipment - FA) - rejected; each unit below capital threshold
+    # Business Context: Firm capitalizes IT hardware only above a policy threshold (e.g., $2,500 per unit)
+    test_setup_files: "LarryLegal_vendors.yaml, LarryLegal_glaccounts.yaml"
+    vendor: "CDW (IT Reseller)"
+    line_items:
+      - line_id: 10000
+        description: "Dell WD19S docking station (6 units)"
+        amount: 1380.00
+    expected_data:
+      - line_id: 10000
+        account_id: "61200"
+
+  - name: LarryLegal-LineMatching-021
+    description: "Salesforce CRM - annual subscription and add-on storage"
+    # Expected Account: 61100 (Cloud Subscriptions (SaaS))
+    # Reasoning: SaaS CRM platform subscription and storage add-on map to cloud subscriptions
+    # Alternatives Considered: 54000 - rejected; not legal research
+    # Business Context: Non-research SaaS grouped in cloud subscriptions
+    test_setup_files: "LarryLegal_vendors.yaml, LarryLegal_glaccounts.yaml"
+    vendor: "Salesforce (CRM Subscription)"
+    line_items:
+      - line_id: 10000
+        description: "Enterprise CRM - annual term"
+        amount: 78000.00
+      - line_id: 10010
+        description: "Additional data storage - 1TB add-on"
+        amount: 4200.00
+      - line_id: 10020
+        description: "Support Premier Success plan"
+        amount: 9500.00
+    expected_data:
+      - line_id: 10000
+        account_id: "61100"
+      - line_id: 10010
+        account_id: "61100"
+      - line_id: 10020
+        account_id: "61300"
+
+  - name: LarryLegal-LineMatching-022
+    description: "Special Counsel - document review contract attorneys (120 hours)"
+    # Expected Account: 51000 (Professional Services - Experts & Consultants)
+    # Reasoning: Contract attorneys engaged through staffing vendor treated as professional services
+    # Alternatives Considered: Payroll expense - not applicable; these are third-party services
+    # Business Context: Contract legal staffing is typically booked to professional services
+    test_setup_files: "LarryLegal_vendors.yaml, LarryLegal_glaccounts.yaml"
+    vendor: "Special Counsel (Contract Attorneys)"
+    line_items:
+      - line_id: 10000
+        description: "Doc review - 120 hours @ blended $65/hr"
+        amount: 7800.00
+      - line_id: 10010
+        description: "Background checks - 4 resources"
+        amount: 220.00
+      - line_id: 10020
+        description: "Equipment provisioning fees"
+        amount: 160.00
+      - line_id: 10030
+        description: "Onboarding admin charges"
+        amount: 120.00
+    expected_data:
+      - line_id: 10000
+        account_id: "51000"
+      - line_id: 10010
+        account_id: "65300"
+      - line_id: 10020
+        account_id: "61200"
+      - line_id: 10030
+        account_id: "65300"
+
+  - name: LarryLegal-LineMatching-023
+    description: "Shred-it secure document destruction service - 12 consoles"
+    # Expected Account: 56000 (Office Supplies and Printing)
+    # Reasoning: Secure shredding part of records/office operations cost
+    # Alternatives Considered: 65100 (Insurance) - rejected; unrelated
+    # Business Context: Admin operations costs grouped with supplies/printing in this COA
+    test_setup_files: "LarryLegal_vendors.yaml, LarryLegal_glaccounts.yaml"
+    vendor: "Shred-it (Secure Destruction)"
+    line_items:
+      - line_id: 10000
+        description: "Monthly shredding service - 12 console pickups"
+        amount: 420.00
+      - line_id: 10010
+        description: "One-time purge - 200 boxes"
+        amount: 900.00
+    expected_data:
+      - line_id: 10000
+        account_id: "56000"
+      - line_id: 10010
+        account_id: "56000"
+
+  - name: LarryLegal-LineMatching-024
+    description: "Jones Lang LaSalle - regional office handyman repairs"
+    # Expected Account: 60100 (Rent Expense) is incorrect; use 60200 (Property Management Fees)
+    # Reasoning: Facilities management vendor performing building repairs and services
+    # Alternatives Considered: 62100 - not present; use property mgmt fees bucket per this COA
+    # Business Context: Centralized facilities/vendor fees map to Property Management Fees
+    test_setup_files: "LarryLegal_vendors.yaml, LarryLegal_glaccounts.yaml"
+    vendor: "Jones Lang LaSalle (Facilities)"
+    line_items:
+      - line_id: 10000
+        description: "Handyman services - door closer replacement"
+        amount: 185.00
+      - line_id: 10010
+        description: "HVAC filter change - quarterly"
+        amount: 260.00
+      - line_id: 10020
+        description: "Light bulb replacement - common areas"
+        amount: 140.00
+      - line_id: 10030
+        description: "Minor drywall patch and paint"
+        amount: 225.00
+      - line_id: 10040
+        description: "Vendor admin/dispatch fee"
+        amount: 35.00
+    expected_data:
+      - line_id: 10000
+        account_id: "60200"
+      - line_id: 10010
+        account_id: "60200"
+      - line_id: 10020
+        account_id: "60200"
+      - line_id: 10030
+        account_id: "60200"
+      - line_id: 10040
+        account_id: "60200"
+
+  - name: LarryLegal-LineMatching-025
+    description: "CBRE - monthly property management fee (HQ)"
+    # Expected Account: 60200 (Property Management Fees)
+    # Reasoning: Third-party property management fee belongs under property management GL
+    # Alternatives Considered: 60100 (Rent) - rejected; fee is separate from rent
+    # Business Context: Managed separately for analysis of facilities overhead
+    test_setup_files: "LarryLegal_vendors.yaml, LarryLegal_glaccounts.yaml"
+    vendor: "CBRE Property Management"
+    line_items:
+      - line_id: 10000
+        description: "Monthly management fee - Chicago HQ"
+        amount: 4850.00
+      - line_id: 10010
+        description: "After-hours building access coordination"
+        amount: 240.00
+    expected_data:
+      - line_id: 10000
+        account_id: "60200"
+      - line_id: 10010
+        account_id: "60200"
+
+  - name: LarryLegal-LineMatching-026
+    description: "Annual CLE packages and bar dues - multi-state attorneys"
+    # Expected Account: 65400 (Training and Continuing Legal Education (CLE))
+    # Reasoning: CLE fees for attorneys are training/education; bar dues map to Dues & Subscriptions 65200
+    # Alternatives Considered: 65200 for CLE - rejected; firm uses a CLE-specific GL
+    # Business Context: Separate tracking of CLE vs general dues
+    test_setup_files: "LarryLegal_vendors.yaml, LarryLegal_glaccounts.yaml"
+    vendor: "Westlaw (Thomson Reuters)"
+    line_items:
+      - line_id: 10000
+        description: "CLE On-Demand annual package - Litigation group"
+        amount: 9600.00
+      - line_id: 10010
+        description: "State bar dues - IL (12 attorneys)"
+        amount: 1440.00
+      - line_id: 10020
+        description: "State bar dues - NY (7 attorneys)"
+        amount: 980.00
+      - line_id: 10030
+        description: "Conference registration - Trial Advocacy Summit"
+        amount: 3200.00
+      - line_id: 10040
+        description: "Training materials - course handbooks"
+        amount: 450.00
+      - line_id: 10050
+        description: "CLE tracking platform annual fee"
+        amount: 600.00
+    expected_data:
+      - line_id: 10000
+        account_id: "65400"
+      - line_id: 10010
+        account_id: "65200"
+      - line_id: 10020
+        account_id: "65200"
+      - line_id: 10030
+        account_id: "65400"
+      - line_id: 10040
+        account_id: "65400"
+      - line_id: 10050
+        account_id: "65400"
+
+  - name: LarryLegal-LineMatching-027
+    description: "IT lifecycle refresh - keyboards, mice, headsets, webcams"
+    # Expected Account: 61200 (IT Equipment and Peripherals (Expensed))
+    # Reasoning: Small peripherals below cap threshold are expensed
+    # Alternatives Considered: 12300 - rejected; not capital purchases
+    # Business Context: Refresh cycles for end-user peripherals treated as OPEX
+    test_setup_files: "LarryLegal_vendors.yaml, LarryLegal_glaccounts.yaml"
+    vendor: "CDW (IT Reseller)"
+    line_items:
+      - line_id: 10000
+        description: "Logitech MX Keys keyboards (30 units)"
+        amount: 2850.00
+      - line_id: 10010
+        description: "Jabra Evolve2 65 headsets (30 units)"
+        amount: 7650.00
+      - line_id: 10020
+        description: "Logitech Brio webcams (30 units)"
+        amount: 4170.00
+      - line_id: 10030
+        description: "Dell mice (30 units)"
+        amount: 390.00
+      - line_id: 10040
+        description: "USB-C hubs (30 units)"
+        amount: 990.00
+      - line_id: 10050
+        description: "HDMI cables (30 units)"
+        amount: 210.00
+      - line_id: 10060
+        description: "Ergonomic wrist rests (30 units)"
+        amount: 270.00
+      - line_id: 10070
+        description: "Desk phone headsets (20 units)"
+        amount: 1180.00
+    expected_data:
+      - line_id: 10000
+        account_id: "61200"
+      - line_id: 10010
+        account_id: "61200"
+      - line_id: 10020
+        account_id: "61200"
+      - line_id: 10030
+        account_id: "61200"
+      - line_id: 10040
+        account_id: "61200"
+      - line_id: 10050
+        account_id: "61200"
+      - line_id: 10060
+        account_id: "61200"
+      - line_id: 10070
+        account_id: "61200"
+
+  - name: LarryLegal-LineMatching-028
+    description: "Firmwide insurance program renewals"
+    # Expected Account: 65100 (Insurance Expense)
+    # Reasoning: Insurance premium renewals booked to insurance GL per firm policy.
+    # Alternatives Considered: 65000 (G&A) - umbrella header, not posting
+    # Business Context: Annual insurance (GL, cyber, E&O) tracked centrally
+    # Vendor Note: Vendor is a placeholder in this dataset; classification is based on invoice content. Insurer/broker vendor record is not present in vendor master.
+    # Business Policy: All insurance premiums and related broker fees are booked to 65100.
+    test_setup_files: "LarryLegal_vendors.yaml, LarryLegal_glaccounts.yaml"
+    vendor: "Microsoft Corporation (Cloud Services)"
+    line_items:
+      - line_id: 10000
+        description: "Cyber liability policy premium"
+        amount: 128000.00
+      - line_id: 10010
+        description: "Professional liability (E&O) premium"
+        amount: 780000.00
+      - line_id: 10020
+        description: "Property insurance premium"
+        amount: 195000.00
+      - line_id: 10030
+        description: "Business interruption coverage"
+        amount: 44000.00
+      - line_id: 10040
+        description: "Fiduciary liability premium"
+        amount: 22500.00
+      - line_id: 10050
+        description: "Crime policy premium"
+        amount: 15500.00
+      - line_id: 10060
+        description: "Umbrella excess liability premium"
+        amount: 78000.00
+      - line_id: 10070
+        description: "Broker service fees"
+        amount: 28500.00
+      - line_id: 10080
+        description: "Risk assessment services"
+        amount: 9600.00
+      - line_id: 10090
+        description: "Policy taxes and surcharges"
+        amount: 11250.00
+    expected_data:
+      - line_id: 10000
+        account_id: "65100"
+      - line_id: 10010
+        account_id: "65100"
+      - line_id: 10020
+        account_id: "65100"
+      - line_id: 10030
+        account_id: "65100"
+      - line_id: 10040
+        account_id: "65100"
+      - line_id: 10050
+        account_id: "65100"
+      - line_id: 10060
+        account_id: "65100"
+      - line_id: 10070
+        account_id: "65100"
+      - line_id: 10080
+        account_id: "65100"
+      - line_id: 10090
+        account_id: "65100"
+
+  - name: LarryLegal-LineMatching-029
+    description: "Monthly HQ occupancy charges"
+    # Expected Account: 60100 (Rent Expense) and 60200 (Property Management Fees) split
+    # Reasoning: Base rent vs property mgmt/admin fees
+    # Alternatives Considered: 66000 header accounts - not posting
+    # Business Context: Occupancy costs tracked by component
+    test_setup_files: "LarryLegal_vendors.yaml, LarryLegal_glaccounts.yaml"
+    vendor: "CBRE Property Management"
+    line_items:
+      - line_id: 10000
+        description: "Base office rent - Chicago HQ"
+        amount: 425000.00
+      - line_id: 10010
+        description: "CAM - common area maintenance"
+        amount: 38500.00
+      - line_id: 10020
+        description: "Property management fee"
+        amount: 4800.00
+      - line_id: 10030
+        description: "Parking allocation charges"
+        amount: 9200.00
+      - line_id: 10040
+        description: "After-hours HVAC surcharge"
+        amount: 1800.00
+      - line_id: 10050
+        description: "Utilities passthrough - electricity"
+        amount: 14500.00
+      - line_id: 10060
+        description: "Utilities passthrough - water"
+        amount: 2100.00
+      - line_id: 10070
+        description: "Janitorial services"
+        amount: 9800.00
+      - line_id: 10080
+        description: "Security services"
+        amount: 7600.00
+      - line_id: 10090
+        description: "Building insurance allocation"
+        amount: 8900.00
+      - line_id: 10100
+        description: "Real estate tax allocation"
+        amount: 21800.00
+      - line_id: 10110
+        description: "Landlord admin fee"
+        amount: 1250.00
+    expected_data:
+      - line_id: 10000
+        account_id: "60100"
+      - line_id: 10010
+        account_id: "60200"
+      - line_id: 10020
+        account_id: "60200"
+      - line_id: 10030
+        account_id: "60200"
+      - line_id: 10040
+        account_id: "60200"
+      - line_id: 10050
+        account_id: "63100"
+      - line_id: 10060
+        account_id: "63300"
+      - line_id: 10070
+        account_id: "60200"
+      - line_id: 10080
+        account_id: "60200"
+      - line_id: 10090
+        account_id: "65100"
+      - line_id: 10100
+        account_id: "66200"
+      - line_id: 10110
+        account_id: "60200"
+
+  - name: LarryLegal-LineMatching-030
+    description: "Year-end technology and admin operating costs roll-up"
+    # Expected Account: Multiple as per line specifics
+    # Reasoning: Large consolidated invoice listing many expense categories
+    # Alternatives Considered: None
+    # Business Context: Some vendors bill consolidated statements covering diverse services
+    # Classification Policy: Durable office furniture/fixtures (chairs, monitor arms, filing/storage units, whiteboards, desk lamps) with >1-year life are capitalized to 12200 per firm policy FA-001 when purchased as part of a planned refresh; consumables go to 56000; IT peripherals/hardware to 61200; shipping to 57000.
+    test_setup_files: "LarryLegal_vendors.yaml, LarryLegal_glaccounts.yaml"
+    vendor: "Staples Business Advantage"
+    line_items:
+      - line_id: 10000
+        description: "Office paper (1000 reams)"
+        amount: 15000.00
+      - line_id: 10010
+        description: "Toner cartridges (bulk)"
+        amount: 12500.00
+      - line_id: 10020
+        description: "Desk chairs (25 units)"
+        amount: 8750.00
+      - line_id: 10030
+        description: "Monitor arms (50 units)"
+        amount: 5250.00
+      - line_id: 10040
+        description: "Keyboard/mouse combo (100 units)"
+        amount: 3900.00
+      - line_id: 10050
+        description: "Shipping charges"
+        amount: 620.00
+      - line_id: 10060
+        description: "Filing cabinets (10 units)"
+        amount: 4900.00
+      - line_id: 10070
+        description: "Desk organizers (200 units)"
+        amount: 1600.00
+      - line_id: 10080
+        description: "USB-C hubs (80 units)"
+        amount: 2560.00
+      - line_id: 10090
+        description: "HDMI cables (100 units)"
+        amount: 700.00
+      - line_id: 10100
+        description: "Copy paper storage boxes (500 units)"
+        amount: 1250.00
+      - line_id: 10110
+        description: "Label makers (15 units)"
+        amount: 675.00
+      - line_id: 10120
+        description: "Whiteboards (20 units)"
+        amount: 1800.00
+      - line_id: 10130
+        description: "Desk lamps (40 units)"
+        amount: 1600.00
+      - line_id: 10140
+        description: "Conference room speakerphones (10 units)"
+        amount: 3500.00
+      - line_id: 10150
+        description: "Webcams (60 units)"
+        amount: 7800.00
+      - line_id: 10160
+        description: "Headsets (60 units)"
+        amount: 11400.00
+      - line_id: 10170
+        description: "Wireless access points (8 units)"
+        amount: 3200.00
+      - line_id: 10180
+        description: "Network patch cables (200 units)"
+        amount: 600.00
+      - line_id: 10190
+        description: "Printer maintenance kits (12 units)"
+        amount: 2880.00
+      - line_id: 10200
+        description: "Staplers and hole punches (100 units)"
+        amount: 900.00
+      - line_id: 10210
+        description: "Desk mats (50 units)"
+        amount: 1200.00
+      - line_id: 10220
+        description: "Anti-glare screen filters (40 units)"
+        amount: 2400.00
+      - line_id: 10230
+        description: "Cable management trays (100 units)"
+        amount: 1900.00
+    expected_data:
+      - line_id: 10000
+        account_id: "56000"
+      - line_id: 10010
+        account_id: "56000"
+      - line_id: 10020
+        account_id: "12200"
+      - line_id: 10030
+        account_id: "12200"
+      - line_id: 10040
+        account_id: "61200"
+      - line_id: 10050
+        account_id: "57000"
+      - line_id: 10060
+        account_id: "12200"
+      - line_id: 10070
+        account_id: "56000"
+      - line_id: 10080
+        account_id: "61200"
+      - line_id: 10090
+        account_id: "61200"
+      - line_id: 10100
+        account_id: "56000"
+      - line_id: 10110
+        account_id: "56000"
+      - line_id: 10120
+        account_id: "12200"
+      - line_id: 10130
+        account_id: "12200"
+      - line_id: 10140
+        account_id: "61200"
+      - line_id: 10150
+        account_id: "61200"
+      - line_id: 10160
+        account_id: "61200"
+      - line_id: 10170
+        account_id: "61200"
+      - line_id: 10180
+        account_id: "61200"
+      - line_id: 10190
+        account_id: "56000"
+      - line_id: 10200
+        account_id: "56000"
+      - line_id: 10210
+        account_id: "56000"
+      - line_id: 10220
+        account_id: "61200"
+      - line_id: 10230
+        account_id: "56000"
+
