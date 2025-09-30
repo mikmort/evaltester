@@ -1,0 +1,935 @@
+test_setup:
+  historicalPurchaseLinesToCreate:
+    # Mix of research subscriptions
+    - vendor_no: "LL-V001"
+      document_no: "LL-PINV-021"
+      posting_date: "TODAY-150D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "54000"
+      description: "Westlaw Precision - enterprise seats"
+      quantity: 1.0
+      unit_of_measure_code: "MO"
+    - vendor_no: "LL-V002"
+      document_no: "LL-PINV-022"
+      posting_date: "TODAY-149D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "54000"
+      description: "LexisNexis - litigation analytics"
+      quantity: 1.0
+      unit_of_measure_code: "MO"
+    - vendor_no: "LL-V001"
+      document_no: "LL-PINV-023"
+      posting_date: "TODAY-148D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "54000"
+      description: "Westlaw add-on: drafting assistant"
+      quantity: 1.0
+      unit_of_measure_code: "MO"
+
+    # e-Discovery & data processing
+    - vendor_no: "LL-V003"
+      document_no: "LL-PINV-024"
+      posting_date: "TODAY-147D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "53000"
+      description: "RelativityOne hosting - workspace expansion"
+      quantity: 1.0
+      unit_of_measure_code: "MO"
+    - vendor_no: "LL-V003"
+      document_no: "LL-PINV-025"
+      posting_date: "TODAY-146D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "53000"
+      description: "Processing fees - native file ingestion"
+      quantity: 1.0
+      unit_of_measure_code: "EA"
+
+    # Court reporting
+    - vendor_no: "LL-V004"
+      document_no: "LL-PINV-026"
+      posting_date: "TODAY-145D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "52000"
+      description: "Realtime court reporting - daily copy"
+      quantity: 1.0
+      unit_of_measure_code: "EA"
+    - vendor_no: "LL-V004"
+      document_no: "LL-PINV-027"
+      posting_date: "TODAY-144D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "52000"
+      description: "Rough draft transcript - 220 pages"
+      quantity: 1.0
+      unit_of_measure_code: "EA"
+
+    # Facilities & occupancy
+    - vendor_no: "LL-V005"
+      document_no: "LL-PINV-028"
+      posting_date: "TODAY-143D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "60100"
+      description: "HQ office rent - monthly"
+      quantity: 1.0
+      unit_of_measure_code: "MO"
+    - vendor_no: "LL-V025"
+      document_no: "LL-PINV-029"
+      posting_date: "TODAY-142D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "60200"
+      description: "Facilities maintenance and repairs"
+      quantity: 1.0
+      unit_of_measure_code: "JOB"
+    - vendor_no: "LL-V005"
+      document_no: "LL-PINV-030"
+      posting_date: "TODAY-141D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "63100"
+      description: "Electric utility passthrough"
+      quantity: 1.0
+      unit_of_measure_code: "MO"
+    - vendor_no: "LL-V005"
+      document_no: "LL-PINV-031"
+      posting_date: "TODAY-140D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "63300"
+      description: "Water & sewer passthrough"
+      quantity: 1.0
+      unit_of_measure_code: "MO"
+    - vendor_no: "LL-V005"
+      document_no: "LL-PINV-032"
+      posting_date: "TODAY-139D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "66200"
+      description: "Property tax allocation - QTR"
+      quantity: 1.0
+      unit_of_measure_code: "QTR"
+
+    # Records & destruction
+    - vendor_no: "LL-V006"
+      document_no: "LL-PINV-033"
+      posting_date: "TODAY-138D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "56000"
+      description: "Offsite records storage - cartons"
+      quantity: 1.0
+      unit_of_measure_code: "MO"
+    - vendor_no: "LL-V024"
+      document_no: "LL-PINV-034"
+      posting_date: "TODAY-137D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "56000"
+      description: "Secure shredding service - consoles"
+      quantity: 1.0
+      unit_of_measure_code: "MO"
+
+    # IT & cloud
+    - vendor_no: "LL-V007"
+      document_no: "LL-PINV-035"
+      posting_date: "TODAY-136D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "61100"
+      description: "Microsoft 365 E5 - monthly"
+      quantity: 1.0
+      unit_of_measure_code: "MO"
+    - vendor_no: "LL-V022"
+      document_no: "LL-PINV-036"
+      posting_date: "TODAY-135D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "61100"
+      description: "Salesforce Enterprise - monthly seats"
+      quantity: 1.0
+      unit_of_measure_code: "MO"
+    - vendor_no: "LL-V021"
+      document_no: "LL-PINV-037"
+      posting_date: "TODAY-134D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "61200"
+      description: "Laptops and docking stations"
+      quantity: 1.0
+      unit_of_measure_code: "LOT"
+    - vendor_no: "LL-V021"
+      document_no: "LL-PINV-038"
+      posting_date: "TODAY-133D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "61300"
+      description: "Software support and maintenance"
+      quantity: 1.0
+      unit_of_measure_code: "MO"
+
+    # Telecom & conferencing
+    - vendor_no: "LL-V008"
+      document_no: "LL-PINV-039"
+      posting_date: "TODAY-132D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "55000"
+      description: "Zoom Phone Pro - seats"
+      quantity: 1.0
+      unit_of_measure_code: "MO"
+    - vendor_no: "LL-V012"
+      document_no: "LL-PINV-040"
+      posting_date: "TODAY-131D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "55000"
+      description: "AT&T dedicated internet access"
+      quantity: 1.0
+      unit_of_measure_code: "MO"
+
+    # Office supplies & printing
+    - vendor_no: "LL-V009"
+      document_no: "LL-PINV-041"
+      posting_date: "TODAY-130D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "56000"
+      description: "Office supplies - paper/toner"
+      quantity: 1.0
+      unit_of_measure_code: "LOT"
+    - vendor_no: "LL-V014"
+      document_no: "LL-PINV-042"
+      posting_date: "TODAY-129D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "56000"
+      description: "Ricoh MFD lease - impressions"
+      quantity: 1.0
+      unit_of_measure_code: "MO"
+    - vendor_no: "LL-V015"
+      document_no: "LL-PINV-043"
+      posting_date: "TODAY-128D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "61300"
+      description: "Xerox maintenance agreement"
+      quantity: 1.0
+      unit_of_measure_code: "MO"
+
+    # Postage & courier
+    - vendor_no: "LL-V013"
+      document_no: "LL-PINV-044"
+      posting_date: "TODAY-127D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "57000"
+      description: "Postage meter refill"
+      quantity: 1.0
+      unit_of_measure_code: "EA"
+    - vendor_no: "LL-V010"
+      document_no: "LL-PINV-045"
+      posting_date: "TODAY-126D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "57000"
+      description: "Overnight courier - filing"
+      quantity: 1.0
+      unit_of_measure_code: "EA"
+
+    # Travel
+    - vendor_no: "LL-V011"
+      document_no: "LL-PINV-046"
+      posting_date: "TODAY-125D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "58000"
+      description: "Corporate travel agency fees"
+      quantity: 1.0
+      unit_of_measure_code: "MO"
+    - vendor_no: "LL-V016"
+      document_no: "LL-PINV-047"
+      posting_date: "TODAY-124D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "58000"
+      description: "Airfare - client matter"
+      quantity: 1.0
+      unit_of_measure_code: "TRIP"
+    - vendor_no: "LL-V017"
+      document_no: "LL-PINV-048"
+      posting_date: "TODAY-123D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "58000"
+      description: "Lodging - deposition travel"
+      quantity: 1.0
+      unit_of_measure_code: "NT"
+
+    # Translation & experts
+    - vendor_no: "LL-V018"
+      document_no: "LL-PINV-049"
+      posting_date: "TODAY-122D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "59000"
+      description: "Phone interpretation - Spanish"
+      quantity: 1.0
+      unit_of_measure_code: "HR"
+    - vendor_no: "LL-V019"
+      document_no: "LL-PINV-050"
+      posting_date: "TODAY-121D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "51000"
+      description: "Expert screening fee"
+      quantity: 1.0
+      unit_of_measure_code: "EA"
+
+    # Courts & filings
+    - vendor_no: "LL-V020"
+      document_no: "LL-PINV-051"
+      posting_date: "TODAY-120D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "52000"
+      description: "Court filing fees"
+      quantity: 1.0
+      unit_of_measure_code: "EA"
+
+    # Additional diverse entries to reach 100 lines
+    - vendor_no: "LL-V001"
+      document_no: "LL-PINV-052"
+      posting_date: "TODAY-119D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "54000"
+      description: "Westlaw litigation bundle"
+      quantity: 1.0
+      unit_of_measure_code: "MO"
+    - vendor_no: "LL-V002"
+      document_no: "LL-PINV-053"
+      posting_date: "TODAY-118D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "54000"
+      description: "Lexis news & public records"
+      quantity: 1.0
+      unit_of_measure_code: "MO"
+    - vendor_no: "LL-V003"
+      document_no: "LL-PINV-054"
+      posting_date: "TODAY-117D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "53000"
+      description: "Relativity processing - OCR"
+      quantity: 1.0
+      unit_of_measure_code: "EA"
+    - vendor_no: "LL-V004"
+      document_no: "LL-PINV-055"
+      posting_date: "TODAY-116D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "52000"
+      description: "Video deposition services"
+      quantity: 1.0
+      unit_of_measure_code: "EA"
+    - vendor_no: "LL-V005"
+      document_no: "LL-PINV-056"
+      posting_date: "TODAY-115D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "60100"
+      description: "HQ office rent - monthly"
+      quantity: 1.0
+      unit_of_measure_code: "MO"
+    - vendor_no: "LL-V006"
+      document_no: "LL-PINV-057"
+      posting_date: "TODAY-114D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "56000"
+      description: "Records retrieval fee"
+      quantity: 1.0
+      unit_of_measure_code: "EA"
+    - vendor_no: "LL-V007"
+      document_no: "LL-PINV-058"
+      posting_date: "TODAY-113D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "61100"
+      description: "Azure AD Premium P2"
+      quantity: 1.0
+      unit_of_measure_code: "MO"
+    - vendor_no: "LL-V008"
+      document_no: "LL-PINV-059"
+      posting_date: "TODAY-112D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "55000"
+      description: "Zoom Rooms licenses"
+      quantity: 1.0
+      unit_of_measure_code: "MO"
+    - vendor_no: "LL-V009"
+      document_no: "LL-PINV-060"
+      posting_date: "TODAY-111D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "56000"
+      description: "Ergonomic office chairs"
+      quantity: 1.0
+      unit_of_measure_code: "EA"
+    - vendor_no: "LL-V010"
+      document_no: "LL-PINV-061"
+      posting_date: "TODAY-110D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "57000"
+      description: "Same-day courier"
+      quantity: 1.0
+      unit_of_measure_code: "EA"
+    - vendor_no: "LL-V011"
+      document_no: "LL-PINV-062"
+      posting_date: "TODAY-109D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "58000"
+      description: "Agency service fee"
+      quantity: 1.0
+      unit_of_measure_code: "EA"
+    - vendor_no: "LL-V012"
+      document_no: "LL-PINV-063"
+      posting_date: "TODAY-108D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "55000"
+      description: "PRI circuit charges"
+      quantity: 1.0
+      unit_of_measure_code: "MO"
+    - vendor_no: "LL-V013"
+      document_no: "LL-PINV-064"
+      posting_date: "TODAY-107D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "57000"
+      description: "Postage - certified mail"
+      quantity: 1.0
+      unit_of_measure_code: "EA"
+    - vendor_no: "LL-V014"
+      document_no: "LL-PINV-065"
+      posting_date: "TODAY-106D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "56000"
+      description: "Ricoh click charges"
+      quantity: 1.0
+      unit_of_measure_code: "IMP"
+    - vendor_no: "LL-V015"
+      document_no: "LL-PINV-066"
+      posting_date: "TODAY-105D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "61300"
+      description: "Xerox break-fix service"
+      quantity: 1.0
+      unit_of_measure_code: "EA"
+    - vendor_no: "LL-V016"
+      document_no: "LL-PINV-067"
+      posting_date: "TODAY-104D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "58000"
+      description: "Airfare - trial team"
+      quantity: 1.0
+      unit_of_measure_code: "TRIP"
+    - vendor_no: "LL-V017"
+      document_no: "LL-PINV-068"
+      posting_date: "TODAY-103D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "58000"
+      description: "Lodging - trial team"
+      quantity: 1.0
+      unit_of_measure_code: "NT"
+    - vendor_no: "LL-V018"
+      document_no: "LL-PINV-069"
+      posting_date: "TODAY-102D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "59000"
+      description: "Document translation - DE to EN"
+      quantity: 1.0
+      unit_of_measure_code: "PG"
+    - vendor_no: "LL-V019"
+      document_no: "LL-PINV-070"
+      posting_date: "TODAY-101D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "51000"
+      description: "Expert consultation - 2 hours"
+      quantity: 2.0
+      unit_of_measure_code: "HR"
+    - vendor_no: "LL-V020"
+      document_no: "LL-PINV-071"
+      posting_date: "TODAY-100D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "52000"
+      description: "Docketing fees"
+      quantity: 1.0
+      unit_of_measure_code: "EA"
+
+    # More IT and facilities cycling to reach 100 entries
+    - vendor_no: "LL-V021"
+      document_no: "LL-PINV-072"
+      posting_date: "TODAY-99D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "61200"
+      description: "Monitors and peripherals"
+      quantity: 1.0
+      unit_of_measure_code: "LOT"
+    - vendor_no: "LL-V022"
+      document_no: "LL-PINV-073"
+      posting_date: "TODAY-98D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "61100"
+      description: "Salesforce sandbox licenses"
+      quantity: 1.0
+      unit_of_measure_code: "MO"
+    - vendor_no: "LL-V005"
+      document_no: "LL-PINV-074"
+      posting_date: "TODAY-97D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "63100"
+      description: "Electric utility passthrough"
+      quantity: 1.0
+      unit_of_measure_code: "MO"
+    - vendor_no: "LL-V025"
+      document_no: "LL-PINV-075"
+      posting_date: "TODAY-96D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "60200"
+      description: "Janitorial services"
+      quantity: 1.0
+      unit_of_measure_code: "MO"
+    - vendor_no: "LL-V006"
+      document_no: "LL-PINV-076"
+      posting_date: "TODAY-95D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "56000"
+      description: "Records storage handling"
+      quantity: 1.0
+      unit_of_measure_code: "EA"
+    - vendor_no: "LL-V007"
+      document_no: "LL-PINV-077"
+      posting_date: "TODAY-94D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "61100"
+      description: "Power BI Pro licenses"
+      quantity: 1.0
+      unit_of_measure_code: "MO"
+    - vendor_no: "LL-V008"
+      document_no: "LL-PINV-078"
+      posting_date: "TODAY-93D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "55000"
+      description: "Zoom Webinar add-on"
+      quantity: 1.0
+      unit_of_measure_code: "MO"
+    - vendor_no: "LL-V009"
+      document_no: "LL-PINV-079"
+      posting_date: "TODAY-92D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "56000"
+      description: "Office desks and cabinets"
+      quantity: 1.0
+      unit_of_measure_code: "EA"
+    - vendor_no: "LL-V010"
+      document_no: "LL-PINV-080"
+      posting_date: "TODAY-91D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "57000"
+      description: "Courier - rush service"
+      quantity: 1.0
+      unit_of_measure_code: "EA"
+    - vendor_no: "LL-V011"
+      document_no: "LL-PINV-081"
+      posting_date: "TODAY-90D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "58000"
+      description: "Travel management fee"
+      quantity: 1.0
+      unit_of_measure_code: "EA"
+
+    - vendor_no: "LL-V012"
+      document_no: "LL-PINV-082"
+      posting_date: "TODAY-89D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "55000"
+      description: "SIP trunk services"
+      quantity: 1.0
+      unit_of_measure_code: "MO"
+    - vendor_no: "LL-V013"
+      document_no: "LL-PINV-083"
+      posting_date: "TODAY-88D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "57000"
+      description: "Bulk postage purchase"
+      quantity: 1.0
+      unit_of_measure_code: "EA"
+    - vendor_no: "LL-V014"
+      document_no: "LL-PINV-084"
+      posting_date: "TODAY-87D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "56000"
+      description: "Ricoh supplies"
+      quantity: 1.0
+      unit_of_measure_code: "LOT"
+    - vendor_no: "LL-V015"
+      document_no: "LL-PINV-085"
+      posting_date: "TODAY-86D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "61300"
+      description: "Xerox service call"
+      quantity: 1.0
+      unit_of_measure_code: "EA"
+
+    - vendor_no: "LL-V016"
+      document_no: "LL-PINV-086"
+      posting_date: "TODAY-85D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "58000"
+      description: "Airfare - mediation"
+      quantity: 1.0
+      unit_of_measure_code: "TRIP"
+    - vendor_no: "LL-V017"
+      document_no: "LL-PINV-087"
+      posting_date: "TODAY-84D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "58000"
+      description: "Hotel - mediation"
+      quantity: 1.0
+      unit_of_measure_code: "NT"
+    - vendor_no: "LL-V018"
+      document_no: "LL-PINV-088"
+      posting_date: "TODAY-83D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "59000"
+      description: "On-site interpreter - 3 hours"
+      quantity: 3.0
+      unit_of_measure_code: "HR"
+    - vendor_no: "LL-V019"
+      document_no: "LL-PINV-089"
+      posting_date: "TODAY-82D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "51000"
+      description: "Expert retainer"
+      quantity: 1.0
+      unit_of_measure_code: "EA"
+    - vendor_no: "LL-V020"
+      document_no: "LL-PINV-090"
+      posting_date: "TODAY-81D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "52000"
+      description: "Courtroom technology fee"
+      quantity: 1.0
+      unit_of_measure_code: "EA"
+
+    # Round out to 100 entries
+    - vendor_no: "LL-V021"
+      document_no: "LL-PINV-091"
+      posting_date: "TODAY-80D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "61200"
+      description: "Networking gear"
+      quantity: 1.0
+      unit_of_measure_code: "LOT"
+    - vendor_no: "LL-V022"
+      document_no: "LL-PINV-092"
+      posting_date: "TODAY-79D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "61100"
+      description: "Platform user licenses"
+      quantity: 1.0
+      unit_of_measure_code: "MO"
+    - vendor_no: "LL-V005"
+      document_no: "LL-PINV-093"
+      posting_date: "TODAY-78D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "63300"
+      description: "Water/sewer passthrough"
+      quantity: 1.0
+      unit_of_measure_code: "MO"
+    - vendor_no: "LL-V025"
+      document_no: "LL-PINV-094"
+      posting_date: "TODAY-77D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "60200"
+      description: "Handyman services"
+      quantity: 1.0
+      unit_of_measure_code: "EA"
+    - vendor_no: "LL-V006"
+      document_no: "LL-PINV-095"
+      posting_date: "TODAY-76D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "56000"
+      description: "File shredding purge"
+      quantity: 1.0
+      unit_of_measure_code: "LOT"
+    - vendor_no: "LL-V007"
+      document_no: "LL-PINV-096"
+      posting_date: "TODAY-75D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "61100"
+      description: "Exchange Online Archiving"
+      quantity: 1.0
+      unit_of_measure_code: "MO"
+    - vendor_no: "LL-V008"
+      document_no: "LL-PINV-097"
+      posting_date: "TODAY-74D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "55000"
+      description: "Zoom Phone add-ons"
+      quantity: 1.0
+      unit_of_measure_code: "MO"
+    - vendor_no: "LL-V009"
+      document_no: "LL-PINV-098"
+      posting_date: "TODAY-73D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "56000"
+      description: "Binders and tabs"
+      quantity: 1.0
+      unit_of_measure_code: "LOT"
+    - vendor_no: "LL-V010"
+      document_no: "LL-PINV-099"
+      posting_date: "TODAY-72D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "57000"
+      description: "Courier - weekend delivery"
+      quantity: 1.0
+      unit_of_measure_code: "EA"
+    - vendor_no: "LL-V011"
+      document_no: "LL-PINV-100"
+      posting_date: "TODAY-71D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "58000"
+      description: "Travel fee adjustment"
+      quantity: 1.0
+      unit_of_measure_code: "EA"
+    - vendor_no: "LL-V012"
+      document_no: "LL-PINV-101"
+      posting_date: "TODAY-70D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "55000"
+      description: "Mobile service charges"
+      quantity: 1.0
+      unit_of_measure_code: "MO"
+    - vendor_no: "LL-V013"
+      document_no: "LL-PINV-102"
+      posting_date: "TODAY-69D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "57000"
+      description: "Postage - international"
+      quantity: 1.0
+      unit_of_measure_code: "EA"
+    - vendor_no: "LL-V014"
+      document_no: "LL-PINV-103"
+      posting_date: "TODAY-68D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "56000"
+      description: "Printer supplies"
+      quantity: 1.0
+      unit_of_measure_code: "LOT"
+    - vendor_no: "LL-V015"
+      document_no: "LL-PINV-104"
+      posting_date: "TODAY-67D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "61300"
+      description: "Xerox support renewal"
+      quantity: 1.0
+      unit_of_measure_code: "YR"
+    - vendor_no: "LL-V016"
+      document_no: "LL-PINV-105"
+      posting_date: "TODAY-66D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "58000"
+      description: "Airfare - arbitration"
+      quantity: 1.0
+      unit_of_measure_code: "TRIP"
+    - vendor_no: "LL-V017"
+      document_no: "LL-PINV-106"
+      posting_date: "TODAY-65D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "58000"
+      description: "Hotel - arbitration"
+      quantity: 1.0
+      unit_of_measure_code: "NT"
+    - vendor_no: "LL-V018"
+      document_no: "LL-PINV-107"
+      posting_date: "TODAY-64D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "59000"
+      description: "Document translation - FR to EN"
+      quantity: 1.0
+      unit_of_measure_code: "PG"
+    - vendor_no: "LL-V019"
+      document_no: "LL-PINV-108"
+      posting_date: "TODAY-63D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "51000"
+      description: "Expert testimony preparation"
+      quantity: 1.0
+      unit_of_measure_code: "EA"
+    - vendor_no: "LL-V020"
+      document_no: "LL-PINV-109"
+      posting_date: "TODAY-62D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "52000"
+      description: "Court reporter technology fee"
+      quantity: 1.0
+      unit_of_measure_code: "EA"
+
+    - vendor_no: "LL-V021"
+      document_no: "LL-PINV-110"
+      posting_date: "TODAY-61D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "61200"
+      description: "Headsets and webcams"
+      quantity: 1.0
+      unit_of_measure_code: "LOT"
+    - vendor_no: "LL-V022"
+      document_no: "LL-PINV-111"
+      posting_date: "TODAY-60D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "61100"
+      description: "CRM storage add-on"
+      quantity: 1.0
+      unit_of_measure_code: "MO"
+    - vendor_no: "LL-V005"
+      document_no: "LL-PINV-112"
+      posting_date: "TODAY-59D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "63100"
+      description: "Electric utility passthrough"
+      quantity: 1.0
+      unit_of_measure_code: "MO"
+    - vendor_no: "LL-V025"
+      document_no: "LL-PINV-113"
+      posting_date: "TODAY-58D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "60200"
+      description: "Elevator maintenance"
+      quantity: 1.0
+      unit_of_measure_code: "MO"
+    - vendor_no: "LL-V006"
+      document_no: "LL-PINV-114"
+      posting_date: "TODAY-57D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "56000"
+      description: "Records retrieval surcharge"
+      quantity: 1.0
+      unit_of_measure_code: "EA"
+    - vendor_no: "LL-V007"
+      document_no: "LL-PINV-115"
+      posting_date: "TODAY-56D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "61100"
+      description: "Security & Compliance add-on"
+      quantity: 1.0
+      unit_of_measure_code: "MO"
+    - vendor_no: "LL-V008"
+      document_no: "LL-PINV-116"
+      posting_date: "TODAY-55D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "55000"
+      description: "Zoom add-ons"
+      quantity: 1.0
+      unit_of_measure_code: "MO"
+    - vendor_no: "LL-V009"
+      document_no: "LL-PINV-117"
+      posting_date: "TODAY-54D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "56000"
+      description: "Office organizers"
+      quantity: 1.0
+      unit_of_measure_code: "LOT"
+    - vendor_no: "LL-V010"
+      document_no: "LL-PINV-118"
+      posting_date: "TODAY-53D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "57000"
+      description: "Courier - holiday surcharge"
+      quantity: 1.0
+      unit_of_measure_code: "EA"
+    - vendor_no: "LL-V011"
+      document_no: "LL-PINV-119"
+      posting_date: "TODAY-52D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "58000"
+      description: "Travel rebooking fee"
+      quantity: 1.0
+      unit_of_measure_code: "EA"
+
+    - vendor_no: "LL-V012"
+      document_no: "LL-PINV-120"
+      posting_date: "TODAY-51D"
+      line_no: 10000
+      type: "G/L Account"
+      item_no: "55000"
+      description: "Fiber internet service"
+      quantity: 1.0
+      unit_of_measure_code: "MO"

@@ -1,0 +1,672 @@
+test_setup:
+  glAccountsToCreate:
+    - account_id: 10000
+      name: BALANCE SHEET
+      indentation: 0
+      account_posting_type: Heading
+      account_category: Assets
+      account_subcategory: Assets
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 10001
+      name: ASSETS
+      indentation: 1
+      account_posting_type: Begin-Total
+      account_category: Assets
+      account_subcategory: Assets
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 11000
+      name: Intangible Assets
+      indentation: 2
+      account_posting_type: Begin-Total
+      account_category: Assets
+      account_subcategory: Assets
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 11100
+      name: Software Licenses (Capitalized)
+      indentation: 3
+      account_posting_type: Posting
+      account_category: Assets
+      account_subcategory: Assets
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 11200
+      name: Goodwill and Intangibles
+      indentation: 3
+      account_posting_type: Posting
+      account_category: Assets
+      account_subcategory: Assets
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 11999
+      name: Total, Intangible Assets
+      indentation: 2
+      account_posting_type: End-Total
+      account_category: Assets
+      account_subcategory: Assets
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 12000
+      name: Fixed Assets
+      indentation: 2
+      account_posting_type: Begin-Total
+      account_category: Assets
+      account_subcategory: Assets
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 12100
+      name: Leasehold Improvements
+      indentation: 3
+      account_posting_type: Posting
+      account_category: Assets
+      account_subcategory: Assets
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 12200
+      name: Office Furniture and Equipment
+      indentation: 3
+      account_posting_type: Posting
+      account_category: Assets
+      account_subcategory: Assets
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 12300
+      name: Computer and IT Equipment
+      indentation: 3
+      account_posting_type: Posting
+      account_category: Assets
+      account_subcategory: Assets
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 12400
+      name: Accumulated Depreciation
+      indentation: 3
+      account_posting_type: Posting
+      account_category: Assets
+      account_subcategory: Accumulated Depreciation
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 12999
+      name: Total, Fixed Assets
+      indentation: 2
+      account_posting_type: End-Total
+      account_category: Assets
+      account_subcategory: Assets
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 14000
+      name: Current Assets
+      indentation: 2
+      account_posting_type: Begin-Total
+      account_category: Assets
+      account_subcategory: Assets
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 14100
+      name: Accounts Receivable
+      indentation: 3
+      account_posting_type: Posting
+      account_category: Assets
+      account_subcategory: Accounts Receivable
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 14200
+      name: Retainers and Client Trust (IOLTA)
+      indentation: 3
+      account_posting_type: Posting
+      account_category: Assets
+      account_subcategory: Cash
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 14300
+      name: Prepaid Expenses
+      indentation: 3
+      account_posting_type: Posting
+      account_category: Assets
+      account_subcategory: Prepaid Expenses
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 14999
+      name: Total, Current Assets
+      indentation: 2
+      account_posting_type: End-Total
+      account_category: Assets
+      account_subcategory: Assets
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 18000
+      name: Cash and Bank
+      indentation: 2
+      account_posting_type: Begin-Total
+      account_category: Assets
+      account_subcategory: Cash
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 18100
+      name: Operating Bank Account
+      indentation: 3
+      account_posting_type: Posting
+      account_category: Assets
+      account_subcategory: Cash
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 18200
+      name: IOLTA Trust Bank Account
+      indentation: 3
+      account_posting_type: Posting
+      account_category: Assets
+      account_subcategory: Cash
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 18999
+      name: Total, Cash and Bank
+      indentation: 2
+      account_posting_type: End-Total
+      account_category: Assets
+      account_subcategory: Cash
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 19999
+      name: TOTAL ASSETS
+      indentation: 1
+      account_posting_type: End-Total
+      account_category: Assets
+      account_subcategory: Assets
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 20000
+      name: LIABILITIES
+      indentation: 1
+      account_posting_type: Begin-Total
+      account_category: Liabilities
+      account_subcategory: Liabilities
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 22100
+      name: Accounts Payable
+      indentation: 2
+      account_posting_type: Posting
+      account_category: Liabilities
+      account_subcategory: Current Liabilities
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 22200
+      name: Accrued Expenses
+      indentation: 2
+      account_posting_type: Posting
+      account_category: Liabilities
+      account_subcategory: Current Liabilities
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 22300
+      name: Deferred Revenue (Client Advances)
+      indentation: 2
+      account_posting_type: Posting
+      account_category: Liabilities
+      account_subcategory: Current Liabilities
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 29999
+      name: Total Liabilities
+      indentation: 1
+      account_posting_type: End-Total
+      account_category: Liabilities
+      account_subcategory: Liabilities
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 30000
+      name: EQUITY
+      indentation: 1
+      account_posting_type: Begin-Total
+      account_category: Equity
+      account_subcategory: Equity
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 30100
+      name: Partners' Capital
+      indentation: 2
+      account_posting_type: Posting
+      account_category: Equity
+      account_subcategory: Equity
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 30200
+      name: Retained Earnings
+      indentation: 2
+      account_posting_type: Posting
+      account_category: Equity
+      account_subcategory: Equity
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 39999
+      name: Total, Equity
+      indentation: 1
+      account_posting_type: End-Total
+      account_category: Equity
+      account_subcategory: Equity
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 40000
+      name: INCOME STATEMENT
+      indentation: 0
+      account_posting_type: Heading
+      account_category: Income Statement
+      account_subcategory: Income
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 40100
+      name: Legal Services Revenue - Hourly
+      indentation: 1
+      account_posting_type: Posting
+      account_category: Income
+      account_subcategory: Service Sales
+      gen_bus_posting_group: DOMESTIC
+      gen_prod_posting_group: SERVICES
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 40200
+      name: Legal Services Revenue - Fixed Fee
+      indentation: 1
+      account_posting_type: Posting
+      account_category: Income
+      account_subcategory: Service Sales
+      gen_bus_posting_group: DOMESTIC
+      gen_prod_posting_group: SERVICES
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 40300
+      name: Contingency Fee Income
+      indentation: 1
+      account_posting_type: Posting
+      account_category: Income
+      account_subcategory: Service Sales
+      gen_bus_posting_group: DOMESTIC
+      gen_prod_posting_group: SERVICES
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 49999
+      name: TOTAL INCOME
+      indentation: 1
+      account_posting_type: End-Total
+      account_category: Income
+      account_subcategory: Income
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 50000
+      name: EXPENSES
+      indentation: 1
+      account_posting_type: Begin-Total
+      account_category: Expense
+      account_subcategory: Expense
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 51000
+      name: Professional Services - Experts & Consultants
+      indentation: 2
+      account_posting_type: Posting
+      account_category: Expense
+      account_subcategory: Expense
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 52000
+      name: Court Reporting and Transcripts
+      indentation: 2
+      account_posting_type: Posting
+      account_category: Expense
+      account_subcategory: Expense
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 53000
+      name: e-Discovery and Data Processing
+      indentation: 2
+      account_posting_type: Posting
+      account_category: Expense
+      account_subcategory: Expense
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 54000
+      name: Legal Research Subscriptions
+      indentation: 2
+      account_posting_type: Posting
+      account_category: Expense
+      account_subcategory: Expense
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 55000
+      name: Telecommunications and Internet
+      indentation: 2
+      account_posting_type: Posting
+      account_category: Expense
+      account_subcategory: Expense
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 56000
+      name: Office Supplies and Printing
+      indentation: 2
+      account_posting_type: Posting
+      account_category: Expense
+      account_subcategory: Expense
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 57000
+      name: Postage and Courier
+      indentation: 2
+      account_posting_type: Posting
+      account_category: Expense
+      account_subcategory: Expense
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 58000
+      name: Travel - Airfare, Lodging, Meals
+      indentation: 2
+      account_posting_type: Posting
+      account_category: Expense
+      account_subcategory: Expense
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 59000
+      name: Translation and Interpretation Services
+      indentation: 2
+      account_posting_type: Posting
+      account_category: Expense
+      account_subcategory: Expense
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 60000
+      name: Occupancy
+      indentation: 2
+      account_posting_type: Begin-Total
+      account_category: Expense
+      account_subcategory: Expense
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 60100
+      name: Rent Expense
+      indentation: 3
+      account_posting_type: Posting
+      account_category: Expense
+      account_subcategory: Expense
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 60200
+      name: Property Management Fees
+      indentation: 3
+      account_posting_type: Posting
+      account_category: Expense
+      account_subcategory: Expense
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 60999
+      name: Total, Occupancy
+      indentation: 2
+      account_posting_type: End-Total
+      account_category: Expense
+      account_subcategory: Expense
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 63000
+      name: Utilities
+      indentation: 2
+      account_posting_type: Begin-Total
+      account_category: Expense
+      account_subcategory: Expense
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 63100
+      name: Electricity
+      indentation: 3
+      account_posting_type: Posting
+      account_category: Expense
+      account_subcategory: Expense
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 63300
+      name: Water and Sewer
+      indentation: 3
+      account_posting_type: Posting
+      account_category: Expense
+      account_subcategory: Expense
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 63999
+      name: Total, Utilities
+      indentation: 2
+      account_posting_type: End-Total
+      account_category: Expense
+      account_subcategory: Expense
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 61000
+      name: Information Technology
+      indentation: 2
+      account_posting_type: Begin-Total
+      account_category: Expense
+      account_subcategory: Expense
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 61100
+      name: Cloud Subscriptions (SaaS)
+      indentation: 3
+      account_posting_type: Posting
+      account_category: Expense
+      account_subcategory: Expense
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 61200
+      name: IT Equipment and Peripherals (Expensed)
+      indentation: 3
+      account_posting_type: Posting
+      account_category: Expense
+      account_subcategory: Expense
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 61300
+      name: Software Maintenance and Support
+      indentation: 3
+      account_posting_type: Posting
+      account_category: Expense
+      account_subcategory: Expense
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 61999
+      name: Total, Information Technology
+      indentation: 2
+      account_posting_type: End-Total
+      account_category: Expense
+      account_subcategory: Expense
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 65000
+      name: General and Administrative
+      indentation: 2
+      account_posting_type: Begin-Total
+      account_category: Expense
+      account_subcategory: Expense
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 65100
+      name: Insurance Expense
+      indentation: 3
+      account_posting_type: Posting
+      account_category: Expense
+      account_subcategory: Expense
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 65200
+      name: Dues and Subscriptions (Non-Research)
+      indentation: 3
+      account_posting_type: Posting
+      account_category: Expense
+      account_subcategory: Expense
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 65300
+      name: Recruiting and Staffing
+      indentation: 3
+      account_posting_type: Posting
+      account_category: Expense
+      account_subcategory: Expense
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 65400
+      name: Training and Continuing Legal Education (CLE)
+      indentation: 3
+      account_posting_type: Posting
+      account_category: Expense
+      account_subcategory: Expense
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 65999
+      name: Total, General and Administrative
+      indentation: 2
+      account_posting_type: End-Total
+      account_category: Expense
+      account_subcategory: Expense
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 66200
+      name: Property Taxes
+      indentation: 2
+      account_posting_type: Posting
+      account_category: Expense
+      account_subcategory: Expense
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''
+    - account_id: 69999
+      name: TOTAL EXPENSES
+      indentation: 1
+      account_posting_type: End-Total
+      account_category: Expense
+      account_subcategory: Expense
+      gen_bus_posting_group: ''
+      gen_prod_posting_group: ''
+      vat_bus_posting_group: ''
+      vat_prod_posting_group: ''

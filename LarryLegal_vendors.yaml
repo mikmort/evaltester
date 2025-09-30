@@ -1,0 +1,177 @@
+test_setup:
+  vendorsToCreate:
+    - vendorNo: LL-V001
+      name: Westlaw (Thomson Reuters)
+      address: 610 Opperman Dr
+      city: Eagan
+      postCode: '55123'
+      countryCode: US
+      vatId: 41-1426970
+    - vendorNo: LL-V002
+      name: LexisNexis
+      address: 9443 Springboro Pike
+      city: Miamisburg
+      postCode: '45342'
+      countryCode: US
+      vatId: 22-2930989
+    - vendorNo: LL-V003
+      name: Relativity (e-Discovery)
+      address: 231 S LaSalle St
+      city: Chicago
+      postCode: '60604'
+      countryCode: US
+      vatId: 36-4513051
+    - vendorNo: LL-V004
+      name: Veritext Legal Solutions (Court Reporting)
+      address: 290 W Mt Pleasant Ave
+      city: Livingston
+      postCode: '07039'
+      countryCode: US
+      vatId: 22-3733459
+    - vendorNo: LL-V005
+      name: CBRE Property Management
+      address: 2100 McKinney Ave
+      city: Dallas
+      postCode: '75201'
+      countryCode: US
+      vatId: 95-3391017
+    - vendorNo: LL-V006
+      name: Iron Mountain (Records Storage)
+      address: 1 Federal St
+      city: Boston
+      postCode: '02110'
+      countryCode: US
+      vatId: 04-3108687
+    - vendorNo: LL-V007
+      name: Microsoft Corporation (Cloud Services)
+      address: 1 Microsoft Way
+      city: Redmond
+      postCode: '98052'
+      countryCode: US
+      vatId: 91-1144442
+    - vendorNo: LL-V008
+      name: Zoom Video Communications
+      address: 55 Almaden Blvd
+      city: San Jose
+      postCode: '95113'
+      countryCode: US
+      vatId: 61-1648789
+    - vendorNo: LL-V009
+      name: Staples Business Advantage
+      address: 500 Staples Dr
+      city: Framingham
+      postCode: '01702'
+      countryCode: US
+      vatId: 04-2896127
+    - vendorNo: LL-V010
+      name: FedEx Corporation (Courier)
+      address: 942 S Shady Grove Rd
+      city: Memphis
+      postCode: '38120'
+      countryCode: US
+      vatId: 71-0427007
+    - vendorNo: LL-V011
+      name: American Express Global Business Travel
+      address: 5 Churchill Pl
+      city: New York
+      postCode: '10036'
+      countryCode: US
+      vatId: 13-4922250
+    - vendorNo: LL-V012
+      name: AT&T (Telecommunications)
+      address: 208 S Akard St
+      city: Dallas
+      postCode: '75202'
+      countryCode: US
+      vatId: 43-1301883
+    - vendorNo: LL-V013
+      name: Pitney Bowes (Postage & Mailing)
+      address: 3001 Summer St
+      city: Stamford
+      postCode: '06926'
+      countryCode: US
+      vatId: 06-0495050
+    - vendorNo: LL-V014
+      name: Ricoh USA (Document Solutions)
+      address: 70 Valley Stream Pkwy
+      city: Malvern
+      postCode: '19355'
+      countryCode: US
+      vatId: 13-2614479
+    - vendorNo: LL-V015
+      name: Xerox Business Solutions
+      address: 201 Merritt 7
+      city: Norwalk
+      postCode: '06851'
+      countryCode: US
+      vatId: 13-2954571
+    - vendorNo: LL-V016
+      name: United Airlines (Corporate Travel)
+      address: 233 S Wacker Dr
+      city: Chicago
+      postCode: '60606'
+      countryCode: US
+      vatId: 36-2675207
+    - vendorNo: LL-V017
+      name: Hyatt Hotels Corporation (Corporate Lodging)
+      address: 150 N Riverside Plaza
+      city: Chicago
+      postCode: '60606'
+      countryCode: US
+      vatId: 36-1849600
+    - vendorNo: LL-V018
+      name: LanguageLine Solutions (Translation)
+      address: 1 Lower Ragsdale Dr
+      city: Monterey
+      postCode: '93940'
+      countryCode: US
+      vatId: 77-0314855
+    - vendorNo: LL-V019
+      name: Expert Institute (Expert Witness Network)
+      address: 1375 Broadway
+      city: New York
+      postCode: '10018'
+      countryCode: US
+      vatId: 27-2967444
+    - vendorNo: LL-V020
+      name: City of Chicago - Courts & Filing
+      address: 50 W Washington St
+      city: Chicago
+      postCode: '60602'
+      countryCode: US
+      vatId: 36-6006363
+    - vendorNo: LL-V021
+      name: CDW (IT Reseller)
+      address: 200 N Milwaukee Ave
+      city: Vernon Hills
+      postCode: '60061'
+      countryCode: US
+      vatId: 36-4230110
+    - vendorNo: LL-V022
+      name: Salesforce (CRM Subscription)
+      address: 415 Mission St
+      city: San Francisco
+      postCode: '94105'
+      countryCode: US
+      vatId: 20-5412078
+    - vendorNo: LL-V023
+      name: Special Counsel (Contract Attorneys)
+      address: 1000 W Morehead St
+      city: Charlotte
+      postCode: '28208'
+      countryCode: US
+      vatId: 52-1549744
+    - vendorNo: LL-V024
+      name: Shred-it (Secure Destruction)
+      address: 7777 N Caldwell Ave
+      city: Niles
+      postCode: '60714'
+      countryCode: US
+      vatId: 98-0687678
+    - vendorNo: LL-V025
+      name: Jones Lang LaSalle (Facilities)
+      address: 200 E Randolph St
+      city: Chicago
+      postCode: '60601'
+      countryCode: US
+      vatId: 36-4160132
